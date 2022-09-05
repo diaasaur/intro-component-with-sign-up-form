@@ -183,6 +183,7 @@ body {
 }
 .error.show + .form__input {
 	border: 1px solid var(--bg-clr);
+	outline: none;
 }
 .error.show ~ .form__input:focus + .form__label,
 .error.show ~ .form__input:not(:placeholder-shown) + .form__label {
