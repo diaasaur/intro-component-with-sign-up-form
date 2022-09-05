@@ -74,18 +74,21 @@ body {
 
 /* form general */
 .form {
-	margin: 2em 0;
+	margin: 1.5em 0;
 	padding: 2em 1.5em;
 	border-radius: 10px;
 	background-color: var(--light-font-clr);
 	display: flex;
 	flex-direction: column;
 	color: #333;
-	gap: 1.5em;
+	/* gap: 1.5em; */
 	box-shadow: var(--box-shadow);
 }
 .form__p {
 	position: relative;
+}
+.form__p + .form__p {
+	margin-top: 1.5em;
 }
 
 .form__input {
@@ -147,11 +150,19 @@ body {
 	cursor: pointer;
 	box-shadow: 0px 5px 0px hsl(154, 59%, 42%);
 	text-shadow: var(--text-shadow);
+	transition: ease-in-out 0.3s;
+	margin: 1em 0;
 }
 .form__button:hover,
 .form__button:active {
 	box-shadow: none;
 	transform: translateY(2.5px);
+}
+
+.password-tip {
+	font-size: 12px;
+	text-align: start;
+	padding: 0.25em;
 }
 
 .form__tands {
@@ -272,7 +283,7 @@ input:-webkit-autofill:active {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 0.99fr 0.01fr;
 		place-items: center;
-		gap: 2em;
+		column-gap: 2em;
 	}
 
 	.header {
@@ -283,6 +294,7 @@ input:-webkit-autofill:active {
 
 	.main {
 		justify-self: flex-start;
+		align-self: flex-start;
 	}
 
 	.header__title {
@@ -296,5 +308,7 @@ input:-webkit-autofill:active {
 
 	.footer {
 		grid-column: 1/-1;
+		/* position: absolute; */
+		/* bottom: 0; */
 	}
 }

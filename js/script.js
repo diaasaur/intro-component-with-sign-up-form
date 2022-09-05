@@ -81,11 +81,11 @@ form.addEventListener("submit", (e) => {
 	});
 
 	// if email is not valid
-	if (!inputs.email.hasError && !isValidEmail(inputs.email.value))
+	if (!inputs?.email?.hasError && !isValidEmail(inputs.email.value))
 		showError(inputs.email.error, "Looks like this is not an email");
 
 	// password check
-	const errorMsg = passwordErrors(inputs.password.value);
-	if (!inputs.password.hasError && errorMsg)
+	const errorMsg = passwordErrors(inputs?.password?.value);
+	if (!inputs?.password?.hasError && errorMsg)
 		showError(inputs.password.error, errorMsg);
 });
