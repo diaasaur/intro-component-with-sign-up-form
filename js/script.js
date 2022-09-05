@@ -55,14 +55,14 @@ const isValidEmail = (email) => {
 form.addEventListener("submit", (e) => {
 	e.preventDefault(); // prevent page from reloading
 
-	const inputs = Object.keys({ ...form.elements }).reduce((acc, key) => {
-		if (isNaN(key)) {
-			const element = form.elements[key];
-			const value = element.value?.trim();
-			const error = element.parentNode.querySelector(".error");
-			const placeholder = element.placeholder;
-			acc[key] = { element, value, error, placeholder, hasError: false };
-		}
+	const { firstName, lastName, email, password } = form.elements;
+
+	const inputs = [firstName, lastName, email, password].reduce((acc, input) => {
+		const name = input.name;
+		const value = input.value?.trim();
+		const error = input.parentNode.querySelector(".error");
+		const placeholder = input.placeholder;
+		acc[name] = { input, value, error, placeholder, hasError: false };
 		return acc;
 	}, {});
 
