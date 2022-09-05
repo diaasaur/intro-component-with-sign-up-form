@@ -185,6 +185,7 @@ body {
 	border: 1px solid var(--bg-clr);
 	outline: none;
 }
+
 .error.show ~ .form__input:focus + .form__label,
 .error.show ~ .form__input:not(:placeholder-shown) + .form__label {
 	color: var(--bg-clr);
@@ -244,6 +245,17 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
 	box-shadow: 0 0 0 30px white inset !important;
 	-webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* autofill suggestion icons overlap fix */
+#password {
+	padding-right: 3em;
+}
+.error.show ~ .form__input {
+	padding-right: 3em;
+}
+.error.show ~ #password {
+	padding-right: 4.25em;
 }
 
 /* media queries */
